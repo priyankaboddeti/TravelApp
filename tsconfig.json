@@ -6,5 +6,5 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "app/(tabs)/profile.tsx", "app/(tabs)/_layout.tsx", "app/(tabs)/discover.tsx", "app/(tabs)/mytrip.tsx", "app/create-trip/search-place.jsx", "constants/Colors.js"]
 }

@@ -1,12 +1,7 @@
-// Import the functions you need from the SDKs you need
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth"; 
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyDbPiKK76BAYN3zJK9RDd3yuSiQVf3j_jQ",
     authDomain: "ai-travel-planner-31c40.firebaseapp.com",
@@ -19,5 +14,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase Auth
 export const auth = getAuth(app);
 
+// // Set persistence using AsyncStorage
+// setPersistence(auth, browserLocalPersistence)
+//   .then(() => {
+//     console.log("Persistence enabled");
+//   })
+//   .catch((error) => {
+//     console.error("Error enabling persistence:", error);
+//   });

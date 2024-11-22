@@ -6,10 +6,12 @@ import {
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { Colors } from "@/constants/Colors";
+import {CreateTripContext} from "../context/CreateTripContext"
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -22,6 +24,7 @@ export default function RootLayout() {
     "Montserrat-SemiBold": require("../assets/fonts/Montserrat-SemiBold.ttf"),
     "Montserrat-Bold": require("../assets/fonts/Montserrat-Bold.ttf"),
   });
+  const [tripData,setTripData]=useState([])
 
   useEffect(() => {
     if (loaded) {
@@ -34,10 +37,12 @@ export default function RootLayout() {
   }
 
   return (
+    <CreateTripContext.Provider value={{tripData,setTripData}}>
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack screenOptions={{ headerShown: false, headerTintColor: Colors.PRIMARY, headerTitleAlign: 'left' }}>
+        <Stack.Screen name="(tabs)" />
       </Stack>
     </ThemeProvider>
+    </CreateTripContext.Provider>
   );
 }

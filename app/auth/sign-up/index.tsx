@@ -6,34 +6,40 @@ import { Ionicons } from "@expo/vector-icons";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/configs/FirebaseConfigs";
 
+
+
 export default function Index() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [fullName, setFullName] = useState("");
+    
 
     const navigation = useNavigation();
     const router = useRouter();
     useEffect(() => {
         navigation.setOptions({ headerShown: false });
     }, []);
-
     const onCreateNewAccount = () => {
+        console.log("enter into function")
         if (!email && !password && !fullName) {
             ToastAndroid.show("Please enter all details", ToastAndroid.BOTTOM)
             return;
         }
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+              
                 // Signed up 
                 const user = userCredential.user;
+                router.replace('/mytrip')
+                console.log(user,"user")
                 // ...
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                console.log(errorCode,errorMessage)
                 // ..
             });
-
     }
 
     return (
