@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import StartNewTripCard from "../../components/MyTrips/StartNewTripCard";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { auth, db } from "@/configs/FirebaseConfigs";
-import UserTripsList from "../../components/MyTrips/UserTripsList"
+import UserTripsList from "../../components/MyTrips/UserTripsList";
 
 export default function MyTrip() {
   const [userTrips, setUserTrips] = useState([]);
@@ -41,7 +41,6 @@ export default function MyTrip() {
         height: "100%",
       }}
     >
-      
       <View
         style={{
           display: "flex",
@@ -61,7 +60,11 @@ export default function MyTrip() {
           color={Colors.PRIMARY}
         ></ActivityIndicator>
       )}
-      {userTrips?.length == 0 ? <StartNewTripCard /> : <UserTripsList userTrips={userTrips}/>}
+      {userTrips?.length == 0 ? (
+        <StartNewTripCard />
+      ) : (
+        <UserTripsList userTrips={userTrips} />
+      )}
     </View>
   );
 }

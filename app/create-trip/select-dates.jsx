@@ -60,7 +60,7 @@ export default function SelectDates() {
       }}
     >
       <Text
-        style={{ fontFamily: "Montserrat-bold", fontSize: 30, marginTop: 20 }}
+        style={{ fontFamily: "Montserrat-Bold", fontSize: 30, marginTop: 20 }}
       >
         Travel Dates
       </Text>

@@ -35,12 +35,12 @@ export default function SelectTraveler() {
       }}
     >
       <Text
-        style={{ fontSize: 35, fontFamily: "Montserrat-bold", marginTop: 20 }}
+        style={{ fontSize: 35, fontFamily: "Montserrat-Bold", marginTop: 20 }}
       >
         Who's Travelling
       </Text>
       <View style={{ marginTop: 20 }}>
-        <Text style={{ fontFamily: "MOntserrat-bold", fontSize: 20 }}>
+        <Text style={{ fontFamily: "Montserrat-Bold", fontSize: 20 }}>
           Choose your traveles
         </Text>
         <FlatList

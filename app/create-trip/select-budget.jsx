@@ -46,12 +46,12 @@ export default function SelectBudget() {
       }}
     >
       <Text
-        style={{ fontFamily: "Montserrat-bold", fontSize: 30, marginTop: 20 }}
+        style={{ fontFamily: "Montserrat-Bold", fontSize: 30, marginTop: 20 }}
       >
         Budget
       </Text>
       <View style={{ marginTop: 30 }}>
-        <Text style={{ fontFamily: "Montserrat-bold", fontSize: 18 }}>
+        <Text style={{ fontFamily: "Montserrat-Bold", fontSize: 18 }}>
           Choose spending habits for your trip
         </Text>
         <FlatList

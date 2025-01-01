@@ -9,7 +9,7 @@ import { TouchableOpacity } from "react-native";
 
 export default function ReviewTrip() {
   const navigation = useNavigation();
-  const router=useRouter();
+  const router = useRouter();
   const { tripData, setTripData } = useContext(CreateTripContext);
   useEffect(() => {
     navigation.setOptions({
@@ -28,12 +28,12 @@ export default function ReviewTrip() {
       }}
     >
       <Text
-        style={{ fontFamily: "Montserrat-bold", fontSize: 25, marginTop: 25 }}
+        style={{ fontFamily: "Montserrat-Bold", fontSize: 25, marginTop: 25 }}
       >
         Review your trip
       </Text>
       <View style={{ marginTop: 20 }}>
-        <Text style={{ fontFamily: "Montserrat-bold", fontSize: 18 }}>
+        <Text style={{ fontFamily: "Montserrat-Bold", fontSize: 18 }}>
           Before generating your trip, Please review your selection
         </Text>
         {/* Destination Info */}
@@ -93,8 +93,8 @@ export default function ReviewTrip() {
           </View>
         </View>
 
-         {/* No of Travellers Info */}
-         <View
+        {/* No of Travellers Info */}
+        <View
           style={{
             marginTop: 35,
             display: "flex",
@@ -119,8 +119,8 @@ export default function ReviewTrip() {
           </View>
         </View>
 
-          {/* Budget Info */}
-          <View
+        {/* Budget Info */}
+        <View
           style={{
             marginTop: 35,
             display: "flex",
@@ -152,7 +152,7 @@ export default function ReviewTrip() {
             borderRadius: 15,
             marginTop: 60,
           }}
-          onPress={()=>router.push('create-trip/generate-trip')}
+          onPress={() => router.push("create-trip/generate-trip")}
         >
           <Text
             style={{ fontSize: 20, textAlign: "center", color: Colors.WHITE }}
