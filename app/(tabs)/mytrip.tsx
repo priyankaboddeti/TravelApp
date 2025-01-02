@@ -1,4 +1,10 @@
-import { View, Text, Platform, ActivityIndicator } from "react-native";
+import {
+  View,
+  Text,
+  Platform,
+  ActivityIndicator,
+  ScrollView,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
@@ -33,7 +39,7 @@ export default function MyTrip() {
     setLoading(false);
   };
   return (
-    <View
+    <ScrollView
       style={{
         padding: 25,
         paddingTop: Platform.OS == "ios" ? 70 : 50,
@@ -65,6 +71,6 @@ export default function MyTrip() {
       ) : (
         <UserTripsList userTrips={userTrips} />
       )}
-    </View>
+    </ScrollView>
   );
 }

@@ -16,8 +16,8 @@ export default function GenerateTrip() {
   const user = auth.currentUser;
 
   useEffect(() => {
-    GenerateAiTrip();
-  }, []);
+    tripData && GenerateAiTrip();
+  }, [tripData]);
 
   const GenerateAiTrip = async () => {
     setLoading(true);
@@ -36,6 +36,7 @@ export default function GenerateTrip() {
     const result = await chatSession.sendMessage(Final_prompt);
     console.log(result.response.text(), "response");
     const tripResponse = JSON.parse(result.response.text());
+    console.log(tripResponse, "GenerateAiTrip-tripResponse");
     setLoading(false);
 
     const docID = Date.now().toString();

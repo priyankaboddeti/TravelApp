@@ -4,8 +4,8 @@ import { Redirect } from "expo-router";
 import { View } from "react-native";
 
 export default function Index() {
-  const user = auth.currentUser
-  console.log(user,"user----")
+  const user = auth.currentUser;
+  console.log(user, "user----");
 
   return (
     <View
@@ -13,8 +13,7 @@ export default function Index() {
         flex: 1,
       }}
     >
-      {user?<Redirect href={'/mytrip'} />:<Login />}
-      
+      {user ? <Redirect href={"/mytrip"} /> : <Login />}
     </View>
   );
 }
